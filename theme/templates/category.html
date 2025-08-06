@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="content">
+    <article>
+        <header>
+            <h1 class="entry-title">{{ page.title if page else category }}</h1>
+        </header>
+        
+        {% if page and page.content %}
+        <div class="entry-content">
+            {{ page.content }}
+        </div>
+        {% endif %}
+        
+        <section class="category-articles">
+            {% if articles %}
+            <div class="article-list">
+                {% for article in articles %}
+                <article class="article-summary">
+                    <header>
+                        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                        <div class="meta">
+                            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                            {% if article.author %}
+                            by <span class="author">{{ article.author }}</span>
+                            {% endif %}
+                        </div>
+                    </header>
+                    
+                    {% if article.summary %}
+                    <div class="summary">
+                        {{ article.summary }}
+                    </div>
+                    {% endif %}
+                    
+                    <footer>
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more...</a>
+                        {% if article.tags %}
+                        <div class="tags">
+                            Tags: 
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+            
+            <!-- Pagination -->
+            {% if articles_paginator.num_pages > 1 %}
+            <div class="pagination">
+                {% if articles_page.has_previous %}
+                    {% if articles_page.previous_page_number == 1 %}
+                    <a href="{{ SITEURL }}/{{ category.url }}" class="prev">&laquo; Previous</a>
+                    {% else %}
+                    <a href="{{ SITEURL }}/{{ category.url }}{{ articles_page.previous_page_number }}.html" class="prev">&laquo; Previous</a>
+                    {% endif %}
+                {% endif %}
+                
+                <span class="page-info">
+                    Page {{ articles_page.number }} of {{ articles_paginator.num_pages }}
+                </span>
+                
+                {% if articles_page.has_next %}
+                <a href="{{ SITEURL }}/{{ category.url }}{{ articles_page.next_page_number }}.html" class="next">Next &raquo;</a>
+                {% endif %}
+            </div>
+            {% endif %}
+            
+            {% else %}
+            <p>No articles found in this category yet.</p>
+            {% endif %}
+        </section>
+    </article>
+</section>
+{% endblock content %}

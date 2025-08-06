@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="content">
+    <article>
+        <header>
+            {% if not page.hide_title %}
+            <h1 class="entry-title">{{ page.title }}</h1>
+            {% endif %}
+            {% if page.subtitle %}
+            <h2 class="subtitle">{{ page.subtitle }}</h2>
+            {% endif %}
+        </header>
+        
+        <div class="entry-content">
+            {{ page.content }}
+        </div>
+        
+        {% if page.show_multiple_categories %}
+        <section class="related-articles">
+            {% set category_names = page.show_multiple_categories.split(',') %}
+            {% if 'Newsletter' in category_names %}
+                <h2>Previous Newsletters</h2>
+            {% elif 'Opuscula' in category_names %}
+                <h2>Recent Opuscula</h2>
+            {% elif 'Symposia' in category_names %}
+                <h2>Previous Symposia</h2>
+            {% elif 'Appeals' in category_names or 'Queries' in category_names %}
+                <h2>Current Appeals and Queries</h2>
+            {% elif 'Spotlight' in category_names %}
+                <h2>What's new</h2>
+            {% elif 'Biography' in category_names %}
+                <h2>Edward Heron-Allen Biographies</h2>
+            {% else %}
+                <h2>Recent News & Events</h2>
+            {% endif %}
+            {% set filtered_articles = [] %}
+            {% for article in articles %}
+                {% if article.category.name in category_names %}
+                    {% if filtered_articles.append(article) %}{% endif %}
+                {% endif %}
+            {% endfor %}
+            {% if 'Newsletter' in category_names %}
+                {% set article_limit = filtered_articles|length %}
+            {% else %}
+                {% set article_limit = page.article_limit|int if page.article_limit else 10 %}
+            {% endif %}
+            {% if filtered_articles %}
+            <div class="article-list">
+                {% for article in filtered_articles[:article_limit] %}
+                <article class="article-summary">
+                    <header>
+                        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                        <div class="meta">
+                            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                            {% if article.author %}
+                            by <span class="author">{{ article.author }}</span>
+                            {% endif %}
+                            in <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+                        </div>
+                    </header>
+                    
+                    {% if article.summary %}
+                    <div class="summary">
+                        {% if 'Newsletter' in category_names or 'Opuscula' in category_names or 'Symposia' in category_names or 'Appeals' in category_names or 'Queries' in category_names %}
+                            {# For newsletters, opuscula, symposia, appeals, and queries, remove image lines but keep other formatting #}
+                            {% set lines = article.summary.split('\n') %}
+                            {% for line in lines %}
+                                {% if not ('<img' in line or 'src=' in line or line.strip().startswith('![')) %}
+                                    {{ line }}
+                                    {% if not loop.last %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {{ article.summary }}
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
+                    <footer>
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more...</a>
+                        {% if article.tags %}
+                        <div class="tags">
+                            Tags: 
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+            
+            {% else %}
+            <p>No articles found in the specified categories yet.</p>
+            {% endif %}
+        </section>
+        {% endif %}
+        
+        {% if page.related_category %}
+        <section class="related-articles">
+            <h2>Related Articles</h2>
+            {% set related_articles = articles|selectattr("category.name", "equalto", page.related_category)|list %}
+            {% if related_articles %}
+            <div class="article-list">
+                {% for article in related_articles %}
+                <article class="article-summary">
+                    <header>
+                        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                        <div class="meta">
+                            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                            {% if article.author %}
+                            by <span class="author">{{ article.author }}</span>
+                            {% endif %}
+                        </div>
+                    </header>
+                    
+                    {% if article.summary %}
+                    <div class="summary">
+                        {{ article.summary }}
+                    </div>
+                    {% endif %}
+                    
+                    <footer>
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more...</a>
+                        {% if article.tags %}
+                        <div class="tags">
+                            Tags: 
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No articles found in the "{{ page.related_category }}" category yet.</p>
+            {% endif %}
+        </section>
+        {% endif %}
+        
+        {% if page.related_tag %}
+        <section class="related-articles">
+            <h2>Archived News</h2>
+            {% set tagged_articles = [] %}
+            {% for article in articles %}
+                {% for tag in article.tags %}
+                    {% if tag.name == page.related_tag %}
+                        {% if tagged_articles.append(article) %}{% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+            {% set article_limit = page.article_limit|int if page.article_limit else 10 %}
+            {% if tagged_articles %}
+            <div class="article-list">
+                {% for article in tagged_articles[:article_limit] %}
+                <article class="article-summary">
+                    <header>
+                        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                        <div class="meta">
+                            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                            {% if article.author %}
+                            by <span class="author">{{ article.author }}</span>
+                            {% endif %}
+                            in <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+                        </div>
+                    </header>
+                    
+                    {% if article.summary %}
+                    <div class="summary">
+                        {{ article.summary }}
+                    </div>
+                    {% endif %}
+                    
+                    <footer>
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more...</a>
+                        {% if article.tags %}
+                        <div class="tags">
+                            Tags: 
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No articles found with the "{{ page.related_tag }}" tag yet. When articles are published with this tag, they will appear here.</p>
+            {% endif %}
+        </section>
+        {% endif %}
+        
+        {% if page.show_all_articles %}
+        <section class="all-articles">
+            <h2>All Recent Articles</h2>
+            <div class="article-list">
+                {% set article_limit = page.article_limit|int if page.article_limit else 5 %}
+                {% for article in articles[:article_limit] %}
+                <article class="article-summary">
+                    <header>
+                        <h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                        <div class="meta">
+                            <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                            {% if article.author %}
+                            by <span class="author">{{ article.author }}</span>
+                            {% endif %}
+                            in <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+                        </div>
+                    </header>
+                    
+                    {% if article.summary %}
+                    <div class="summary">
+                        {{ article.summary }}
+                    </div>
+                    {% endif %}
+                    
+                    <footer>
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read more...</a>
+                        {% if article.tags %}
+                        <div class="tags">
+                            Tags: 
+                            {% for tag in article.tags %}
+                                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    </article>
+</section>
+{% endblock content %}

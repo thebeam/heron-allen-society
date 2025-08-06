@@ -1,0 +1,32 @@
+# Pelican output directory
+output/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pelican cache
+cache/
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp

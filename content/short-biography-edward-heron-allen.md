@@ -1,0 +1,30 @@
+Title: Short Biography of Edward Heron-Allen (1861-1943)
+Date: 2025-08-02
+Author: Heron-Allen Society
+Category: Biography
+Tags: biography
+Status: published
+Slug: short-biography-edward-heron-allen
+
+# Short Biography of Edward Heron-Allen (1861-1943)
+
+*by R.B. Russell (Tartarus Press), 2001*
+
+If a serious biography of Edward Heron-Allen were to be undertaken it would have to be the work of various hands. It is highly unlikely that any one biographer could have an informed appreciation of Heron-Allen's many and varied interests.
+
+I first came across Heron-Allen under the pseudonym of Christopher Blayre. In the early 1920s the author had written a number of entertaining and often very original short stories which include elements of the supernatural, fantasy and sf. However, most bookdealers who have heard of the author will probably be aware of his books on the violin, or perhaps Cheiriosophy (palmistry), for he wrote widely on both subjects and was frequently reprinted. In Sussex he is better-known as a local historian and archaeologist, although his obituary in the journal of the Royal Society made more of his scientific researches and writings. Mention must also be made of his translations.
+
+Edward Heron-Allen started publishing his work in the 1880s and 1890s, and would at first sight appear to have been something of a dilettante. He gave himself a double-barrelled surname and threw up his job in the family firm of solicitors so as to pursue a career in literature. He became friendly with Oscar Wilde and more especially his wife, Constance, and moved in social circles which brought meetings with such 1890s characters as Andre Raffalovich and Walter Pater. That he is rarely included as even a footnote in the various biographies of the period does not mean that success eluded him in his many endeavours.
+
+Rather than a dilettante, Heron-Allen is better described as a polymath. The violin was his first love and Heron-Allen began to write and lecture on the art of violin making, "having become a 'casual' apprentice of George Charnot" (one of the greatest violin makers of the time). Heron-Allen's book, Violin Making As It Was and Is has been continuously in print since its publication in 1884. However, his Chiromancy, or the science of palmistry, (Routledge & Sons, London, 1883) and A Manual of Cheirosophy, (Ward, Lock, & Co., London, 1885) made his name in London Society. He read the palms and analysed the handwriting of various luminaries of the period, and was even asked to cast the horoscope of Oscar and Constance Wilde's first son, Cyril. Towards the end of the 1880s he embarked on a three year lecture tour of America (his subject was palmistry) which was both critically and financially successful.
+
+It was while in America that Heron-Allen made a serious attempt at writing fiction. However, he returned to the family firm of solicitors in 1889, and in 1891 he married Marianna Lehmann and the two appear to have co-written and co-translated various works until her invalidism and early death. His return to the law did not mean a neglect of his other interests, and besides musical, literary and scientific projects Heron-Allen also became an early member of the Society for Psychical Research. He claimed that at the many seances he attended he witnessed no phenomena that he could not reproduce himself.
+
+His scientific interests were taken to a point which is surprising considering that Heron-Allen had no scientific training or background. He moved to Selsey Bill in West Sussex and published a number of studies on the chalk foraminifera (minute animals, or protozoa, with a perforated shell.) of Selsey between 1908-1911, culminating in the publication by Duckworth of Selsey Bill: Historic and Prehistoric. These publications, along with his presidency of the Microscopical Society resulted in his election as a Fellow of the Royal Society in 1919, a rare honour for a British scientist. His "type slide collection" was gratefully accepted by the British Museum.
+
+![Edward Heron-Allen with Itha and Armorel](images/EHA-2.jpg)  
+*Edward Heron-Allen with Itha and Armorel at Large Acres, Selsey, c.1914*
+
+Another talent was Heron-Allen's linguistic ability. A gifted Persian scholar he not only translated into English that dubious classic the Rubaiyat of Omar Khayyam, but also The Lament of Baba Tahir from an almost unknown Persian dialect known as Luri. (He also introduced an edition of the Rubaiyat translated by Frederick Rolfe, otherwise known as Baron Corvo.) Persian literature came first in his list of recreations in Who's Who at the time of his death in 1943. Closely following this were marine zoology; meteorology; Auricula and Asparagus culture. Obituaries in the specialist press made mention of his achievements in other fields, including local history and archaeology.
+
+Heron-Allen's recent literary reputation, however, is based on the sale of a very slim volume, The Cheetah Girl, at Sotheby's a couple of years ago. For the collector the book is almost to good to be true. Written under the pseudonym of Christopher Blayre it is supposed to have been suppressed in the 1920s because it dealt with various sexual taboos. Only twenty copies were printed-just enough that one surfaces for sale every decade. The contents had been hinted at in reference books, but as very few had ever read the story then they would not have known that various forms of unconventional sexuality were dealt with, including prostitution, lesbianism bestiality and pederasty. Heron-Allen's more accessible work was collected as The Purple Sapphire (Allan, [1921]), The Strange Papers of Christopher Blayre (Allan, 1932) and Some Women of the University ([Stockwell], 1934). The pseudonym of Dryasdust has also been attributed to Heron-Allen, but there appears to be no evidence of this. "Dryasdust" is associated with another pseudonym, M.Y. Halidom and the Tales of the Wonder Club. Commentators who have read both Heron-Allen and Halidom consider the latter to be inferior and the work of a less talented author.

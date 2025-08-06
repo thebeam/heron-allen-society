@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="content">
+    <script type="text/javascript">
+        // Redirect to about page immediately
+        window.location.href = "{{ SITEURL }}/about.html";
+    </script>
+    
+    <noscript>
+        <!-- Fallback for users with JavaScript disabled -->
+        <p>Please visit our <a href="{{ SITEURL }}/about.html">About page</a> to learn more about The Heron-Allen Society.</p>
+    </noscript>
+</section>
+{% endblock content %}

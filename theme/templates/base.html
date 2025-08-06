@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+</head>
+
+<body{% if page %} class="page-{{ page.slug }}"{% elif article %} class="article-{{ article.slug }}"{% endif %}>
+    <header id="banner" class="body">
+        <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+        {% if SITESUBTITLE %}
+        <h2 class="subtitle">{{ SITESUBTITLE }}</h2>
+        {% endif %}
+        
+        <nav>
+            <ul>
+                {% for item in MENUITEMS %}
+                    {% if item[1] is string %}
+                        {# Simple menu item #}
+                        {% set is_active = false %}
+                        {% if page and page.url %}
+                            {% set is_active = (item[1] == '/' + page.url) or (item[1] == page.url) %}
+                        {% elif article and article.url %}
+                            {% set is_active = (item[1] == '/' + article.url) or (item[1] == article.url) %}
+                        {% endif %}
+                        <li{% if is_active %} class="active"{% endif %}><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+                    {% else %}
+                        {# Dropdown menu item #}
+                        {% set is_dropdown_active = false %}
+                        {% if page and page.url %}
+                            {% for title, link in item[1] %}
+                                {% if (link == '/' + page.url) or (link == page.url) %}
+                                    {% set is_dropdown_active = true %}
+                                {% endif %}
+                            {% endfor %}
+                        {% elif article and article.url %}
+                            {% for title, link in item[1] %}
+                                {% if (link == '/' + article.url) or (link == article.url) %}
+                                    {% set is_dropdown_active = true %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <li class="dropdown{% if is_dropdown_active %} active{% endif %}">
+                            <a href="#" class="dropdown-toggle">{{ item[0] }} <span class="dropdown-arrow">▼</span></a>
+                            <ul class="dropdown-menu">
+                                {% for title, link in item[1] %}
+                                    {% set is_subitem_active = false %}
+                                    {% if page and page.url %}
+                                        {% set is_subitem_active = (link == '/' + page.url) or (link == page.url) %}
+                                    {% elif article and article.url %}
+                                        {% set is_subitem_active = (link == '/' + article.url) or (link == article.url) %}
+                                    {% endif %}
+                                    <li{% if is_subitem_active %} class="active"{% endif %}><a href="{{ link }}">{{ title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="content" class="body">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer id="contentinfo" class="body">
+        <p>
+            {% if COPYRIGHT_NAME %}
+                &copy; {{ COPYRIGHT_YEAR or '' }} {{ COPYRIGHT_NAME }}
+            {% endif %}
+        </p>
+    </footer>
+</body>
+</html>

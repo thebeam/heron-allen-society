@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section id="content" class="body">
+    <article>
+        <header>
+            <h1 class="entry-title">{{ article.title }}</h1>
+            <div class="meta">
+                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                {% if article.author %}
+                by <span class="author">{{ article.author }}</span>
+                {% endif %}
+                in <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+            </div>
+        </header>
+        
+        <div class="entry-content">
+            {{ article.content }}
+        </div>
+        
+        {% if article.tags %}
+        <footer>
+            <div class="tags">
+                Tags: 
+                {% for tag in article.tags %}
+                    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+        </footer>
+        {% endif %}
+    </article>
+</section>
+{% endblock %}
