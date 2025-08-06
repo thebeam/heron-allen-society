@@ -12,4 +12,4 @@ By John P. Mahoney & Timothy J. McCann
 
 (Heron-Allen Society, 2018)
 
-[Postscript November 2018 - August 2025](bibliography.html)
+[Postscript November 2018 - August 2025](/bibliography.html)

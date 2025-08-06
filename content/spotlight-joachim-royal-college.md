@@ -8,4 +8,4 @@ Slug: joachim-royal-college
 
 Joachim in the Heron-Allen Collection at the Royal College of Music, London
 
-Powerpoint presentation by Sinni Francesco Ricci [click here to listen](/content/audio/Sinni%20Francesco%20Ricci%20-%20Joachim%20In%20The%20Heron-Allen%20Collection%20At%20Rcm)
+Powerpoint presentation by Sinni Francesco Ricci [click here to listen](/audio/sinni-francesco-ricci-joachim-in-the-heron-allen-collection-at-rcm.m4v)

@@ -105,7 +105,7 @@ TAG_SAVE_AS = 'tag/{slug}.html'
 # INDEX_SAVE_AS = 'index.html'
 
 # Static paths
-STATIC_PATHS = ['images', 'documents', 'extra']
+STATIC_PATHS = ['images', 'documents', 'extra', 'audio']
 
 # Plugins (if needed later)
 # PLUGIN_PATHS = ['pelican-plugins']
