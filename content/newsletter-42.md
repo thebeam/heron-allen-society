@@ -28,7 +28,6 @@ Preservation.’ pp. 10-15
 * Juliet and David Field: The 2024 Heron-Allen Lecture, “The Journey to 30 by 30,” by
 Professor Jonathan Baillie, at Lady Margaret Hall, University of Oxford, on 1 March
 2024, pp. 19-21
-
 * Bob Forrest: ‘Heron-Allen and the Publisher H.S. Nichols.’ pp. 21-23
 * Dr Kate Adcock: playing the Heron-Allen Organ at Selsey Sussex, at the 2022 Heron-
 Allen

@@ -10,4 +10,3 @@ Slug: newsletter-40
 ![Newsletter No.40](/images/newsletters/newsl40.jpg)
 
 - John P. Mahoney, 'The large gothic symbol complex in the momorial illuminated manuscript of Armorel Heron-Allen'
-![Newsletter No.40](/images/newsletters/Newsl40.JPG)

@@ -10,6 +10,5 @@ Slug: newsletter-41
 ![Newsletter No.41](/images/newsletters/newsl41.jpg)
 
 - Merlin Holland; Francis Beretti; Venetia Jones; Brian Hulan; Minoo and Alan Lord, Short tributes from Members in response to Tim's death
-![Newsletter No.41](/images/newsletters/Newsl41.JPG)
 - Alan Readman, 'Remebering Tim McCann'
 - Bob Forest, 'Ella Hallward and Edward Heron-Allen'
