@@ -7,7 +7,7 @@ Slug: newsletter-41
 
 # Heron-Allen Society Newsletter No. 41 (Autumn 2022)
 
-![Newsletter No.41](/images/newsletters/newsl41.jpg)
+![Newsletter No.41](/images/newsletters/Newsl41.jpg)
 
 - Merlin Holland; Francis Beretti; Venetia Jones; Brian Hulan; Minoo and Alan Lord, Short tributes from Members in response to Tim's death
 - Alan Readman, 'Remebering Tim McCann'
